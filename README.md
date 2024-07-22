@@ -2,13 +2,13 @@ Aqui está um exemplo de documentação para a ferramenta de deploy baseada em N
 
 ---
 
-# Documentação do Cliente de Deploy
+# Documentação do Deploy Server 
 
 **Autor**: Paulo Leonardo da Silva Cassimiro
 
 ## Visão Geral
 
-Este cliente de deploy é uma aplicação Node.js que permite automatizar o processo de deploy em um servidor. Ele pode ser instalado em qualquer servidor para facilitar o gerenciamento e a execução de comandos de deploy com base em requisições HTTP. A aplicação utiliza o framework Express.js para servir as requisições e a biblioteca `dotenv` para gerenciar variáveis de ambiente.
+Este servidor de deploy é uma aplicação Node.js que permite automatizar o processo de deploy em um servidor. Ele pode ser instalado em qualquer servidor para facilitar o gerenciamento e a execução de comandos de deploy com base em requisições HTTP. A aplicação utiliza o framework Express.js para servir as requisições e a biblioteca `dotenv` para gerenciar variáveis de ambiente.
 
 ## Funcionalidades
 
