@@ -94,6 +94,13 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
     "password": "password"
   }
   ```
+ Exemplo de requisição via CURL:
+ 
+ ```bash
+  curl -X POST http://192.168.0.175:3000/ -H "Content-Type: application/json" -d "{\"user\": \"paulo\",\"password\": \"123456\",\"deploy\": \"teste\"}"
+```
+
+Com o exemplo acima, você pode integrar os comandos no seu gerenciador de dependências de preferência.
 
 ### Respostas
 
