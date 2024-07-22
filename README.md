@@ -96,7 +96,12 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
   curl -X POST http://192.168.0.175:3000/ -H "Content-Type: application/json" -d "{\"user\": \"paulo\",\"password\": \"123456\",\"deploy\": \"teste\"}"
 ```
 
-Com o exemplo acima, você pode integrar os comandos no seu gerenciador de dependências de preferência.
+ O comando acima pode ser salvo da seguinte forma como script personalizado no seu packege.json do Node ou composer.json do PHP:
+  ```json
+"deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
+ ```
+
+Além disso, a aplicação já vem embutido com o PM2 para pesistencia de processo, para maiores informações, orientamos que você acesse o link do PM2 em : https://pm2.keymetrics.io/
 
 ### Respostas
 
