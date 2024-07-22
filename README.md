@@ -1,7 +1,3 @@
-Aqui está um exemplo de documentação para a ferramenta de deploy baseada em Node.js:
-
----
-
 # Documentação do Deploy Server 
 
 **Autor**: Paulo Leonardo da Silva Cassimiro
