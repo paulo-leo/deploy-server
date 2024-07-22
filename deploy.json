@@ -1,0 +1,10 @@
+{
+    "teste": {
+        "user": "paulo",
+        "password": "123456",
+        "cmd": "cd C:\\xampp\\htdocs\\dp0 && tree",
+        "ips": [
+            "127.0.0.1"
+        ]
+    }
+}
