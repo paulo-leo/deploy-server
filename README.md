@@ -1,14 +1,14 @@
-# Documentação do Deploy Server 
+# Documentação do Deploy Server
 
 **Autor**: Paulo Leonardo da Silva Cassimiro
 
 ## Visão Geral
 
-Este servidor de deploy é uma aplicação Node.js que permite automatizar o processo de deploy em um servidor. Ele pode ser instalado em qualquer servidor para facilitar o gerenciamento e a execução de comandos de deploy com base em requisições HTTP. A aplicação utiliza o framework Express.js para servir as requisições e a biblioteca `dotenv` para gerenciar variáveis de ambiente.
+Este servidor de deploy é uma aplicação Node.js que facilita a automação do processo de deploy em servidores. Pode ser instalado em qualquer servidor para gerenciar e executar comandos de deploy com base em requisições HTTP. Utiliza o framework Express.js para servir as requisições e a biblioteca `dotenv` para gerenciar variáveis de ambiente.
 
 ## Funcionalidades
 
-- **Automatização de Deploy**: Permite a execução de comandos de deploy com base em dados fornecidos via requisição HTTP POST.
+- **Automatização de Deploy**: Executa comandos de deploy com base em dados fornecidos via requisição HTTP POST.
 - **Autenticação**: Verifica o IP do cliente e as credenciais (usuário e senha) antes de permitir a execução do comando de deploy.
 - **Logs**: Registra todas as operações e erros em um arquivo de log para rastreamento e diagnóstico.
 
@@ -90,18 +90,55 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
     "password": "password"
   }
   ```
- Exemplo de requisição via CURL:
- 
- ```bash
+
+  Exemplo de requisição via `curl`:
+
+  ```bash
   curl -X POST http://192.168.0.175:3000/ -H "Content-Type: application/json" -d "{\"user\": \"paulo\",\"password\": \"123456\",\"deploy\": \"teste\"}"
-```
+  ```
 
- O comando acima pode ser salvo da seguinte forma como script personalizado no seu packege.json do Node ou composer.json do PHP:
-  ```json
-"deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
- ```
+  O comando acima pode ser salvo como um script personalizado no seu `package.json` do Node.js ou `composer.json` do PHP.
 
-Além disso, a aplicação já vem embutido com o PM2 para pesistencia de processo, para maiores informações, orientamos que você acesse o link do PM2 em : https://pm2.keymetrics.io/
+### Adicionando Scripts no `package.json`
+
+1. **Abra o arquivo `package.json`** no diretório raiz do seu projeto Node.js.
+
+2. **Localize a seção `scripts`** e adicione o script `deploy`:
+
+   ```json
+   "scripts": {
+     "start": "node index.js",
+     "dev": "nodemon index.js",
+     "deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
+   }
+   ```
+
+3. **Execute o script** usando o comando:
+
+   ```bash
+   npm run deploy
+   ```
+
+### Adicionando Scripts no `composer.json`
+
+1. **Abra o arquivo `composer.json`** no diretório raiz do seu projeto PHP.
+
+2. **Localize a seção `scripts`** e adicione o script `deploy`:
+
+   ```json
+   "scripts": {
+     "post-install-cmd": [
+       "echo 'Post-install script executed'"
+     ],
+     "deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
+   }
+   ```
+
+3. **Execute o script** usando o comando:
+
+   ```bash
+   composer run deploy
+   ```
 
 ### Respostas
 
