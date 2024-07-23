@@ -94,7 +94,7 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
   Exemplo de requisição via `curl`:
 
   ```bash
-  curl -X POST http://192.168.0.175:3000/ -H "Content-Type: application/json" -d "{\"user\": \"paulo\",\"password\": \"123456\",\"deploy\": \"teste\"}"
+  curl -X POST http://190.000.0.17:3000/ -H "Content-Type: application/json" -d "{\"user\": \"paulo\",\"password\": \"123456\",\"deploy\": \"teste\"}"
   ```
 
   O comando acima pode ser salvo como um script personalizado no seu `package.json` do Node.js ou `composer.json` do PHP.
@@ -109,7 +109,7 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
    "scripts": {
      "start": "node index.js",
      "dev": "nodemon index.js",
-     "deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
+     "deploy": "curl -X POST http://190.000.0.17:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
    }
    ```
 
@@ -130,7 +130,7 @@ O servidor estará disponível em `http://localhost:3000/`, a menos que você te
      "post-install-cmd": [
        "echo 'Post-install script executed'"
      ],
-     "deploy": "curl -X POST http://192.168.0.175:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
+     "deploy": "curl -X POST http://190.000.0.17:3000/ -H \"Content-Type: application/json\" -d \"{\\\"user\\\": \\\"paulo\\\", \\\"password\\\": \\\"123456\\\", \\\"deploy\\\": \\\"teste\\\"}\""
    }
    ```
 
